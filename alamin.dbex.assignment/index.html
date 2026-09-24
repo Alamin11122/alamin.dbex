@@ -1,84 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AL-AMIN | Website Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0f">
+  <title>AL-AMIN — Web Developer</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <img src="profile.jpg" alt="Profile photo of AL-AMIN">
+  <header class="header">
+    <a class="brand" href="#home" aria-label="AL-AMIN home">
+      <span class="brand-icon">A<span>.</span></span>
+      <span>AL-AMIN</span>
+    </a>
 
-    <div>
-      <p class="tag">WEB DEVELOPER</p>
-      <h1>Hi, I'm AL-AMIN</h1>
-      <p class="intro">
-        I create clean, responsive, and user-friendly websites.
-      </p>
-      <a class="button" href="#contact">Get in touch</a>
-    </div>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a class="nav-contact" href="#contact">Contact <span>↗</span></a>
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light theme">
+      <span id="theme-icon" aria-hidden="true">◐</span>
+    </button>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <main>
-    <section id="about" class="card about">
-      <h2>About Me</h2>
-      <p>
-        I am AL-AMIN, a website developer who enjoys building modern websites
-        and learning new technology.
-      </p>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> WEB DEVELOPER · BENUE STATE</p>
+        <h1>Making the<br>internet feel<br><span class="hero-accent">more human.</span></h1>
+        <p class="hero-description">
+          I’m AL-AMIN: learning, building, and turning bright ideas into
+          clean, useful websites.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-lime" href="#work">Explore my work <span>↘</span></a>
+          <a class="button button-quiet" href="#contact">Let’s connect <span>↗</span></a>
+        </div>
+
+        <div class="now-line">
+          <span class="now-label">CURRENTLY</span>
+          <span id="changing-role">making the web a little better</span>
+          <i aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="art-ring ring-one"></div>
+        <div class="art-ring ring-two"></div>
+        <div class="art-card">
+          <div class="art-card-top"><span>IN THE MAKING</span><span>✳</span></div>
+          <img class="profile-photo" src="profile.jpg" alt="Portrait of AL-AMIN">
+          <div class="art-card-bottom">
+            <span>AL-AMIN</span>
+            <span>WEB / CREATIVE / CURIOUS</span>
+          </div>
+        </div>
+        <span class="floating-tag"><b></b> OPEN TO IDEAS</span>
+        <span class="art-cross cross-one">✳</span>
+        <span class="art-cross cross-two">✦</span>
+      </div>
+
+      <a class="scroll-cue" href="#about"><span></span> SCROLL TO EXPLORE</a>
+      <span class="hero-index">01 <i>/</i> 04</span>
     </section>
 
-    <section id="portfolio">
-      <h2 class="section-title">What I Enjoy</h2>
-
-      <div class="cards">
-        <article class="card">
-          <span>💻</span>
-          <h3>Web Development</h3>
-          <p>I enjoy designing websites with HTML, CSS, and JavaScript.</p>
-        </article>
-
-        <article class="card">
-          <span>📚</span>
-          <h3>Learning</h3>
-          <p>I like improving my skills and exploring new ideas.</p>
-        </article>
-
-        <article class="card">
-          <span>🎵</span>
-          <h3>Music</h3>
-          <p>I enjoy listening to music when relaxing or working.</p>
-        </article>
+    <section class="about section" id="about">
+      <div class="section-intro">
+        <p class="eyebrow">01 — THE PERSON</p>
+        <h2>Curiosity is<br>my <span>superpower.</span></h2>
+      </div>
+      <div class="about-copy">
+        <p id="subtitle" class="about-lead">
+          I am AL-AMIN, a website developer from Benue State.
+        </p>
+        <p>
+          I like making websites that feel clear, welcoming, and easy to use.
+          Every project is a chance to learn something new and make the next
+          idea better than the last.
+        </p>
+        <button id="about-button" class="text-button" type="button">
+          Say hello <span>✳</span>
+        </button>
+        <p id="about-response" class="response" aria-live="polite"></p>
       </div>
     </section>
 
-    <section id="contact" class="card contact">
-      <h2>Get in Touch</h2>
+    <section class="work section" id="work">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 — THE PLAYGROUND</p>
+          <h2>Ideas in <span>progress.</span></h2>
+        </div>
+        <p class="section-aside">Practice concepts I’m exploring as I learn.</p>
+      </div>
 
-      <form>
+      <div class="filter-bar" id="project-filters" aria-label="Filter projects">
+        <button class="filter-chip active" type="button" data-filter="all">All ideas <span>03</span></button>
+        <button class="filter-chip" type="button" data-filter="design">Design <span>01</span></button>
+        <button class="filter-chip" type="button" data-filter="javascript">JavaScript <span>02</span></button>
+      </div>
+
+      <div class="project-grid">
+        <button class="project-card project-green" type="button"
+          data-project="portfolio" data-category="design"
+          aria-label="More about the personal portfolio concept">
+          <span class="project-art">
+            <span class="project-label">PERSONAL BRAND / 001</span>
+            <span class="browser-window">
+              <i class="browser-dots"><b></b><b></b><b></b></i>
+              <i class="browser-title"></i><i class="browser-line"></i><i class="browser-line short"></i>
+              <i class="browser-image"></i>
+            </span>
+            <span class="project-art-index">01</span>
+          </span>
+          <span class="project-info">
+            <span class="project-type">DESIGN CONCEPT · HTML · CSS</span>
+            <strong>My personal portfolio</strong>
+            <span>A digital home for my story and work.</span>
+          </span>
+          <span class="project-arrow">↗</span>
+        </button>
+
+        <button class="project-card project-purple" type="button"
+          data-project="movie" data-category="javascript"
+          aria-label="More about the movie finder concept">
+          <span class="project-art">
+            <span class="project-label">MOVIE DISCOVERY / 002</span>
+            <span class="movie-poster poster-a"></span>
+            <span class="movie-poster poster-b"></span>
+            <span class="movie-poster poster-c"></span>
+            <span class="poster-spark">✦</span>
+            <span class="project-art-index">02</span>
+          </span>
+          <span class="project-info">
+            <span class="project-type">GROUP PROJECT IDEA · HTML · CSS · JS</span>
+            <strong>Movie finder</strong>
+            <span>Find a film by title, genre, or mood.</span>
+          </span>
+          <span class="project-arrow">↗</span>
+        </button>
+
+        <button class="project-card project-orange" type="button"
+          data-project="focus" data-category="javascript"
+          aria-label="More about the focus list concept">
+          <span class="project-art">
+            <span class="project-label">DAILY FOCUS / 003</span>
+            <span class="focus-note">
+              <b>Today’s focus</b><i></i><i></i><i></i><em>✳</em>
+            </span>
+            <span class="project-art-index">03</span>
+          </span>
+          <span class="project-info">
+            <span class="project-type">LEARNING CONCEPT · JAVASCRIPT</span>
+            <strong>Little focus list</strong>
+            <span>A small idea for keeping goals in view.</span>
+          </span>
+          <span class="project-arrow">↗</span>
+        </button>
+      </div>
+      <p class="project-note">These are learning concepts, not finished client projects.</p>
+    </section>
+
+    <section class="skills section" id="skills">
+      <div class="section-intro">
+        <p class="eyebrow">03 — TOOLS IN MY KIT</p>
+        <h2>Getting better<br>by <span>building.</span></h2>
+        <p class="skills-blurb">I’m learning through practice and making things that work.</p>
+      </div>
+
+      <div class="skills-panel">
+        <div class="skill-row">
+          <div class="skill-label"><b>HTML</b><span>Building foundations</span></div>
+          <div class="skill-track"><i data-width="82%"></i></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label"><b>CSS</b><span>Making it look right</span></div>
+          <div class="skill-track"><i data-width="68%"></i></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label"><b>JavaScript</b><span>Learning the logic</span></div>
+          <div class="skill-track"><i data-width="42%"></i></div>
+        </div>
+        <div class="skill-tags">
+          <span>Responsive design</span>
+          <span>Creative thinking</span>
+          <span>Problem solving</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">04 — YOUR TURN</p>
+        <h2>Got an idea?<br><span>Let’s talk.</span></h2>
+        <p>Questions, project ideas, or just a hello—send me a message.</p>
+        <button id="copy-email" class="email-copy" type="button">
+          <span>HELLO@ALAMIN.DEV</span><b aria-hidden="true">⧉</b>
+        </button>
+      </div>
+
+      <form id="contact-form" class="contact-form">
         <label for="name">Your name</label>
-        <input id="name" type="text" placeholder="Enter your name">
+        <input id="name" name="name" type="text" placeholder="What should I call you?" required>
 
         <label for="email">Email address</label>
-        <input id="email" type="email" placeholder="Enter your email">
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
 
         <label for="message">Message</label>
-        <textarea id="message" placeholder="Write your message"></textarea>
+        <textarea id="message" name="message" placeholder="Tell me what you have in mind..." required></textarea>
 
-        <button type="submit">Send Message</button>
+        <button class="button button-lime submit-button" type="submit">Send message <span>↗</span></button>
+        <p id="form-response" class="response" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 AL-AMIN. All rights reserved.</p>
+  <footer class="footer">
+    <a class="brand" href="#home"><span class="brand-icon">A<span>.</span></span><span>AL-AMIN</span></a>
+    <p>Made with curiosity in Benue State.</p>
+    <span>© 2026 AL-AMIN</span>
   </footer>
+
+  <dialog id="project-dialog" class="project-dialog">
+    <button id="close-dialog" class="close-dialog" type="button" aria-label="Close">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">↑</button>
 </body>
 </html>
